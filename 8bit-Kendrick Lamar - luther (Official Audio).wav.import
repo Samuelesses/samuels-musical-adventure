@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ypt0ec466hf3"
+path="res://.godot/imported/8bit-Kendrick Lamar - luther (Official Audio).wav-fad1218bd87a71c123232532b62af10e.sample"
+
+[deps]
+
+source_file="res://8bit-Kendrick Lamar - luther (Official Audio).wav"
+dest_files=["res://.godot/imported/8bit-Kendrick Lamar - luther (Official Audio).wav-fad1218bd87a71c123232532b62af10e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://btfceln2eayl7"]
+
+[ext_resource type="AudioStream" uid="uid://ypt0ec466hf3" path="res://8bit-Kendrick Lamar - luther (Official Audio).wav" id="1_jw7xl"]
+[ext_resource type="Texture2D" uid="uid://clm55pxp1cotr" path="res://Frame 3.png" id="2_jw7xl"]
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="3_vx0l8"]
+[ext_resource type="Texture2D" uid="uid://c6y2rlosbg0jc" path="res://Group 1 (1).png" id="4_l0y4s"]
+[ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://area_2d.gd" id="5_icnpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noywv"]
+size = Vector2(80, 104.90112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb4bh"]
+size = Vector2(41.020355, 59.16502)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb78g"]
+size = Vector2(101, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xebvw"]
+size = Vector2(113, 276)
+
+[node name="kendrick" type="Node" unique_id=2066587605]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=67231287]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1839914381]
+stream = ExtResource("1_jw7xl")
+volume_db = -39.825
+autoplay = true
+
+[node name="Frame1(2)" type="Sprite2D" parent="." unique_id=104265351]
+texture = ExtResource("2_jw7xl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Frame1(2)" unique_id=1351556011]
+position = Vector2(40.000004, 24)
+scale = Vector2(1.57, 1.57)
+script = ExtResource("3_vx0l8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Frame1(2)/CharacterBody2D" unique_id=1777049228]
+position = Vector2(-24, 8)
+scale = Vector2(0.30499953, 0.28500092)
+texture = ExtResource("4_l0y4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame1(2)/CharacterBody2D" unique_id=89540296]
+position = Vector2(-24.203827, 3.1847143)
+scale = Vector2(1.4143682, -1.4358076)
+shape = SubResource("RectangleShape2D_noywv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Frame1(2)" unique_id=1426629418]
+position = Vector2(-626, 203)
+scale = Vector2(30.786236, 3.262063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame1(2)/StaticBody2D" unique_id=2044919214]
+position = Vector2(20.417192, 13.028568)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_tb4bh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=165869613]
+position = Vector2(-643, 63)
+script = ExtResource("5_icnpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1485287175]
+shape = SubResource("RectangleShape2D_xb78g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=591645183]
+position = Vector2(631, 38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=610850683]
+shape = SubResource("RectangleShape2D_xebvw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

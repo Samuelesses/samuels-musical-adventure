@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://hvfd3q0ok6qd"]
+
+[ext_resource type="Script" uid="uid://d86bod3hevdk" path="res://scenes/button.gd" id="1_5hgee"]
+[ext_resource type="Texture2D" uid="uid://cmtsr5aq6d4p2" path="res://Frame 4.png" id="1_xsilq"]
+
+[node name="Control" type="Control" unique_id=2094534518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame1(2)" type="Sprite2D" parent="." unique_id=601428318]
+texture = ExtResource("1_xsilq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=556918899]
+
+[node name="Button" type="Button" parent="." unique_id=754434497]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -835.0
+offset_top = -574.0
+offset_right = -319.5
+offset_bottom = -443.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+script = ExtResource("1_5hgee")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
